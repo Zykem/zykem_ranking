@@ -9,7 +9,6 @@ AddEventHandler('playerDropped', function()
     for i=1,#playersReceived do
 
         if GetPlayerName(source) == playersReceived[i].name then
-            print('tokenizer # nulled ' .. playersReceived[i].name .. ' token table! [leave-event]')
             playersReceived[i] = nil
             return
         end
@@ -60,7 +59,7 @@ AddEventHandler('esx:playerLoaded', function(source)
     }
     playersReceived[#playersReceived + 1] = tableOfData
 
-    -- Server -> Client Token Receiver
+    -- Server -> Client Token Call
     TriggerClientEvent('zykem_ranking:receiveToken', source, generatedToken)
     print('# Assigned ' .. generatedToken .. ' to player ' .. source)
 
@@ -96,7 +95,7 @@ end
 local stattypes = {"kill", "death"}
 RegisterServerEvent('zykem-statEvent')
 AddEventHandler('zykem-statEvent', function(sectoken, stattype)
-    -- guard clause
+
     if (not table.concat(stattypes, ','):match(stattype)) then return end;  
 
     -- tokenizer check
@@ -127,17 +126,6 @@ AddEventHandler('zykem-statEvent', function(sectoken, stattype)
     generateNew(GetPlayerName(source))
 end)
 
-MySQL.ready(function()
-
-    
-
-end)
-
-local stats_temp = {
-    kills = {},
-    deaths = {},
-    playtime = {}
-}
 local money, identifiers, decimalhours_formatted
 function sendStat(stat, sus)
 
