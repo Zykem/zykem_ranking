@@ -53,7 +53,6 @@ end)
 RegisterNetEvent('zykem_ranking:receiveToken')
 AddEventHandler('zykem_ranking:receiveToken', function(tokenhuj)
     token = tokenhuj
-    print('received token [debug purposes]: ' .. tokenhuj)
 end)
 
 -- playtime logic
@@ -65,7 +64,6 @@ if (config.main.playTimeRanking) then
         while true do
     
             random_interval = math.random(1,4)
-            print(random_interval)
             Citizen.Wait(1000 * 60 * random_interval)
             TriggerServerEvent('zykem_ranking:updatePlaytime', random_interval, token)
 
