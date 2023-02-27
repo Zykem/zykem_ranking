@@ -3,13 +3,13 @@
 
 1. Install Files
 2. Drag and Drop them to your resources Folder
-3. Add `ensure zykem_coinsystem` to your server.cfg and type ```refresh\nrestart zykem_coinsystem``` in your server console
+3. Add `ensure zykem_ranking` to your server.cfg and type ```refresh\nrestart zykem_ranking``` in your server console
 
 <h1>Features</h1>
 <ul>
     <li>ESX-Based</b></li>
     <li>Highly Configurable</li>
-    <li>Loclaes [ Polish and English ]</li>
+    <li>Locales [ Polish and English ]</li>
     <li>Optimized</li>
     <li>Ranking of playtime, kills, money, deaths</li>
     <li>Inbuilt Tokenizer (every player has his own token and gets a new one after he triggers the kill/death event</li>
