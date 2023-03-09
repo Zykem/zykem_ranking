@@ -35,6 +35,7 @@ function getCharName(identifier)
 
 end
 
+RegisterNetEvent('esx:playerLoaded')
 AddEventHandler('esx:playerLoaded', function(source)
 
     local player = ESX.GetPlayerFromId(source)
@@ -66,7 +67,7 @@ AddEventHandler('esx:playerLoaded', function(source)
 end)
 
 function insertNewPlayer(identifiers)
-    MySQL.query('INSERT INTO rankings (identifier,playtime) VALUES (?,?)', {json.encode(identifiers), json.encode({hours = 0.00})})
+    MySQL.query('INSERT INTO rankings (identifier,playtime) VALUES (?,?)', {json.encode(identifiers), json.encode({hours = 0.00, decimalhours = 0.00, minutes = 0})})
 end
 
 function generateNew(playername)
